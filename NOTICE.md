@@ -1,0 +1,1 @@
+This software includes code derived from OpenCensus [OpenCensus Libraries for Go](https://github.com/census-instrumentation/opencensus-go) under Apache 2.0 with some modifications by Michal Sokolowski (@0michalsokolowski0).
