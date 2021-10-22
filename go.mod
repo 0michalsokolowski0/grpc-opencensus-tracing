@@ -1,4 +1,4 @@
-module 0michalsokolowski0/grpc-opencensus-tracing
+module github.com/0michalsokolowski0/grpc-opencensus-tracing
 
 go 1.17
 
