@@ -17,11 +17,12 @@ package tracing
 import (
 	"context"
 	"fmt"
+	"strings"
+
 	"go.opencensus.io/trace"
 	"go.opencensus.io/trace/propagation"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/stats"
-	"strings"
 )
 
 func NewStandardClientHandler() *ClientHandler {

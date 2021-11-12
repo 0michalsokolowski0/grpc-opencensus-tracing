@@ -16,12 +16,13 @@ package tracing
 
 import (
 	"fmt"
+	"math"
+	"math/rand"
+
 	"go.opencensus.io/trace"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/stats"
 	"google.golang.org/grpc/status"
-	"math"
-	"math/rand"
 )
 
 func traceHandleRPC(span trace.SpanInterface, rs stats.RPCStats, payloadAttributeLengthLimit int) {

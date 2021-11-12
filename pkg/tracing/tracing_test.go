@@ -16,12 +16,13 @@ package tracing_test
 
 import (
 	"context"
-	"github.com/0michalsokolowski0/grpc-opencensus-tracing/internal/testpb"
 	"io"
 	"testing"
 	"time"
 
 	"go.opencensus.io/trace"
+
+	"github.com/0michalsokolowski0/grpc-opencensus-tracing/internal/testpb"
 )
 
 type testExporter struct {

@@ -17,7 +17,6 @@ package testpb
 import (
 	"context"
 	"fmt"
-	"github.com/0michalsokolowski0/grpc-opencensus-tracing/pkg/tracing"
 	"io"
 	"net"
 	"testing"
@@ -25,6 +24,8 @@ import (
 
 	"go.opencensus.io/trace"
 	"google.golang.org/grpc"
+
+	"github.com/0michalsokolowski0/grpc-opencensus-tracing/pkg/tracing"
 )
 
 type testServer struct{}

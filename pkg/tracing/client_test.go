@@ -16,9 +16,10 @@ package tracing
 
 import (
 	"context"
+	"testing"
+
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/stats"
-	"testing"
 
 	"go.opencensus.io/trace"
 )

@@ -2,13 +2,14 @@ package tracing
 
 import (
 	"errors"
+	"strconv"
+	"testing"
+
 	"github.com/stretchr/testify/require"
 	"go.opencensus.io/trace"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/stats"
 	"google.golang.org/grpc/status"
-	"strconv"
-	"testing"
 )
 
 func TestTraceHandleRPC(t *testing.T) {
