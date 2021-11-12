@@ -24,6 +24,13 @@ import (
 	"strings"
 )
 
+func NewStandardClientHandler() *ClientHandler {
+	return &ClientHandler{
+		StartOptions:                trace.StartOptions{},
+		PayloadAttributeLengthLimit: StandardPayloadAttributeSizeLimit,
+	}
+}
+
 type ClientHandler struct {
 	StartOptions                trace.StartOptions
 	PayloadAttributeLengthLimit int
@@ -39,7 +46,7 @@ func (c *ClientHandler) TagConn(ctx context.Context, cti *stats.ConnTagInfo) con
 }
 
 func (c *ClientHandler) HandleRPC(ctx context.Context, rs stats.RPCStats) {
-	traceHandleRPC(ctx, rs, c.PayloadAttributeLengthLimit)
+	traceHandleRPC(trace.FromContext(ctx), rs, c.PayloadAttributeLengthLimit)
 }
 
 func (c *ClientHandler) TagRPC(ctx context.Context, rti *stats.RPCTagInfo) context.Context {
