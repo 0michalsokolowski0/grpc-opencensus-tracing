@@ -1,6 +1,6 @@
-.PHONY: generate-proto
-generate-proto:
-	protoc --go_out=plugins=grpc:./internal/testpb ./internal/testpb/*.proto
+.PHONY: generate-test-proto
+generate-test-proto:
+	protoc --go_out=plugins=grpc:. --go_opt=paths=source_relative ./internal/testpb/test.proto
 
 .PHONY: test
 test:
