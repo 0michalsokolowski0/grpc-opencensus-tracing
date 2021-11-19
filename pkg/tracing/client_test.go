@@ -18,11 +18,18 @@ import (
 	"context"
 	"testing"
 
+	"github.com/stretchr/testify/require"
+	"go.opencensus.io/trace"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/stats"
-
-	"go.opencensus.io/trace"
 )
+
+func TestNewStandardClientHandler(t *testing.T) {
+	handler := NewStandardClientHandler()
+
+	require.Equal(t, StandardPayloadAttributeSizeLimit, handler.PayloadAttributeLengthLimit)
+	require.Equal(t, trace.StartOptions{}, handler.StartOptions)
+}
 
 func TestClientHandler_tagRPC(t *testing.T) {
 	ch := &ClientHandler{}
